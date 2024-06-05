@@ -4,4 +4,6 @@
   <div></div>
 </template>
 
-<style scoped></style>
+<style lang="scss">
+@import "./GeneralLayout.scss";
+</style>
