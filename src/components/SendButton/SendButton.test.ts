@@ -18,7 +18,7 @@ describe("Given a SendButton component", () => {
     test("Then it should emit the 'send-message' event", async () => {
       await fireEvent.click(sendButton)
 
-      expect(emitted()).toHaveProperty("send-message")
+      expect(emitted()).toHaveProperty(["send-message"])
       expect(emitted()).toHaveProperty("click")
     })
   })
