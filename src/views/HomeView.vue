@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import GeneralLayout from '@/components/GeneralLayout.vue'
+import GeneralLayout from "@/components/GeneralLayout/GeneralLayout.vue"
 </script>
 
 <template>
