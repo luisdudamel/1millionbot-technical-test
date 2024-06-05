@@ -6,8 +6,10 @@ defineProps<ChatMessageProps>()
 </script>
 
 <template>
-  <div class="chat-message__container">
-    <p class="chat-message__text">{{ messageText }}</p>
+  <div class="chat-message__container" :class="'chat-message__container--' + messageAuthor">
+    <p class="chat-message__text">
+      {{ messageText }}
+    </p>
   </div>
 </template>
 

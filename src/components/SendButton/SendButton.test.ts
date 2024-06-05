@@ -1,24 +1,25 @@
 import { describe, expect, test } from "vitest"
-import { mount } from "@vue/test-utils"
+import { render, fireEvent } from "@testing-library/vue"
 import SendButton from "./SendButton.vue"
 
 describe("Given a SendButton component", () => {
   const expectedAriaLabel = "Send"
 
-  const wrapper = mount(SendButton)
-  const sendButton = wrapper.find(`[aria-label="${expectedAriaLabel}"]`)
+  const { getByRole, emitted } = render(SendButton)
+  const sendButton = getByRole("button", { name: expectedAriaLabel })
 
   describe("When it's mounted", () => {
-    test("Then it should render a button with aria label `Send`", () => {
-      expect(sendButton.exists()).toBe(true)
+    test("Then it should render a button with the accesible name `Send`", () => {
+      expect(sendButton).not.toBeNull()
     })
   })
 
-  describe("When it0s mounted and the user clicks on the button with the aria label `Send`", () => {
+  describe("When it's mounted and the user clicks on the button with the accesible name `Send`", () => {
     test("Then it should emit the 'send-message' event", async () => {
-      await sendButton.trigger("click")
+      await fireEvent.click(sendButton)
 
-      expect(wrapper.emitted("send-message")).toBeTruthy()
+      expect(emitted()).toHaveProperty("send-message")
+      expect(emitted()).toHaveProperty("click")
     })
   })
 })

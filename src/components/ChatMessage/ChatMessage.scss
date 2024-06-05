@@ -3,17 +3,25 @@
 .chat-message {
   &__container {
     display: flex;
-
     align-items: center;
     justify-content: center;
-    background-color: base.$color-primary-faded;
     width: fit-content;
     max-width: 350px;
     height: fit-content;
     min-height: 50px;
     padding: 10px 10px;
     border-radius: 15px;
-    border-bottom-left-radius: 0;
+
+    &--user {
+      background-color: white;
+      border: solid 1px base.$color-primary;
+      border-bottom-right-radius: 0;
+    }
+
+    &--agent {
+      background-color: base.$color-primary;
+      border-bottom-left-radius: 0;
+    }
   }
 
   &__text {
