@@ -1,0 +1,9 @@
+.chat-layout {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+}

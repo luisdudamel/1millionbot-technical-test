@@ -1,0 +1,32 @@
+@use "src/styles/base";
+
+.chat {
+  &-footer {
+    &__container {
+      border-top: solid 1px base.$line-divider;
+      display: flex;
+      padding: 0px 20px;
+      gap: 20px;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      width: 100%;
+    }
+  }
+
+  &-input {
+    height: 60px;
+    width: 100%;
+    font-size: 1.2rem;
+    padding-left: 15px;
+    background-color: base.$color-input-background;
+    border: none;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    outline: none;
+  }
+
+  &-input:focus {
+    outline: 1px solid base.$color-primary-faded;
+  }
+}

@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import { mockAgent } from "@/mocks/mockdata"
-import ChatHeader from "../ChatHeader/ChatHeader.vue"
+import ChatLayout from "../ChatLayout/ChatLayout.vue"
 </script>
 
 <template>
-  <div>
-    <ChatHeader v-bind="mockAgent" />
-  </div>
+  <main class="general-layout__container">
+    <ChatLayout />
+  </main>
 </template>
+
+<style lang="scss">
+@import "./GeneralLayout.scss";
+</style>

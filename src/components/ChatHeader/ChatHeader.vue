@@ -5,7 +5,7 @@ defineProps<ChatAgent>()
 </script>
 
 <template>
-  <aside class="chat-header__container">
+  <section class="chat-header__container">
     <div class="agent-info">
       <img
         class="agent-info__avatar"
@@ -31,7 +31,7 @@ defineProps<ChatAgent>()
         <img src="/img/threedots.png" alt="Three dots icon" />
       </button>
     </div>
-  </aside>
+  </section>
 </template>
 
 <style lang="scss">
