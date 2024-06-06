@@ -1,4 +1,9 @@
-import type { ChatMessage } from "@/types"
+import type { ChatMessage, ChatAgent } from "@/types"
+
+export const MockAgent: ChatAgent = {
+  name: "Leia",
+  avatarUrl: "chatbotavatar.png"
+}
 
 export const mockAgentMessage: ChatMessage = {
   messageAuthor: "agent",

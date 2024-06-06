@@ -1,0 +1,35 @@
+@use "src/styles/base";
+
+.chat-header {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 20px;
+    height: 60px;
+    border-bottom: solid 1px base.$line-divider;
+
+    .agent-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      &__name {
+        position: relative;
+        top: 5px;
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+    }
+
+    .chat-actions {
+      display: flex;
+      align-items: center;
+      &__button {
+        cursor: pointer;
+        background: none;
+        border: none;
+      }
+    }
+  }
+}

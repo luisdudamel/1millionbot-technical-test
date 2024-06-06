@@ -1,5 +1,6 @@
 export type ChatAgent = {
   name: string
+  avatarUrl: string
 }
 
 export type User = {
