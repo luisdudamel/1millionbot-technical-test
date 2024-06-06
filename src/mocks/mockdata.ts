@@ -1,6 +1,6 @@
 import type { ChatMessage, ChatAgent } from "@/types"
 
-export const MockAgent: ChatAgent = {
+export const mockAgent: ChatAgent = {
   name: "Leia",
   avatarUrl: "chatbotavatar.png"
 }

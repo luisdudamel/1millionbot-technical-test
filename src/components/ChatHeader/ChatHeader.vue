@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { ChatAgent } from "@/types"
+defineEmits(["minimize-chat", "open-options"])
 defineProps<ChatAgent>()
 </script>
 
@@ -10,16 +11,24 @@ defineProps<ChatAgent>()
         class="agent-info__avatar"
         width="45"
         :src="`/img/${avatarUrl}`"
-        alt="Profile picture of current chat agent"
+        :alt="`Profile picture of chat agent ${name}`"
       />
       <span class="agent-info__name">{{ name }}</span>
     </div>
     <div class="chat-actions">
-      <button class="chat-actions__button">
-        <img src="/img/minimize-chat.png" alt="" />
+      <button
+        @click="$emit('minimize-chat')"
+        class="chat-actions__button"
+        aria-label="Minimize chat"
+      >
+        <img src="/img/minimize-chat.png" alt="Two arrows facing down icon" />
       </button>
-      <button class="chat-actions__button">
-        <img src="/img/threedots.png" alt="" />
+      <button
+        @click="$emit('open-options')"
+        class="chat-actions__button"
+        aria-label="Open chat options"
+      >
+        <img src="/img/threedots.png" alt="Three dots icon" />
       </button>
     </div>
   </aside>
