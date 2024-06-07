@@ -7,10 +7,13 @@ export const addMessageToList = (
   timestamp: number,
   messageList: Ref<ChatMessage[]>
 ) => {
+  if (!messageToAdd.messageAuthor || !messageToAdd.messageText) {
+    return
+  }
+
   const highestId = !messageList.value.length
     ? 0
     : Math.max(...messageList.value.map((message) => message.id))
-
   messageList.value.push({
     ...messageToAdd,
     id: highestId + 1,
