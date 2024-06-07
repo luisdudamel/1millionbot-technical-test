@@ -7,8 +7,12 @@ export type User = {
   name: string
 }
 
-export type ChatMessage = {
-  id?: number
+export type UserMessage = {
   messageText: string
   messageAuthor: "agent" | "user"
+}
+
+export type ChatMessage = UserMessage & {
+  id: number
+  timestamp: number
 }

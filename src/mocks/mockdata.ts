@@ -1,4 +1,4 @@
-import type { ChatMessage, ChatAgent } from "@/types"
+import type { ChatMessage, ChatAgent, UserMessage } from "@/types"
 
 export const mockAgent: ChatAgent = {
   name: "Leia",
@@ -8,118 +8,102 @@ export const mockAgent: ChatAgent = {
 export const mockAgentMessage: ChatMessage = {
   id: 1,
   messageAuthor: "agent",
-  messageText: "Hi! How can I help you?"
+  messageText: "Hi! How can I help you?",
+  timestamp: 10000
 }
 
 export const mockUserMessage: ChatMessage = {
   id: 1,
   messageAuthor: "user",
-  messageText: "I'm a test message from an user!"
+  messageText: "I'm a test message from an user!",
+  timestamp: 10000
 }
 
 export const mockUserLongMessage: ChatMessage = {
   id: 1,
   messageAuthor: "user",
   messageText:
-    "I'm a test message from an user! A really really long message, as you can see I can take a lot of space"
+    "I'm a test message from an user! A really really long message, as you can see I can take a lot of space",
+  timestamp: 10000
 }
 
-export const mockAgentMessages: ChatMessage[] = [
+export const mockAgentMessages: UserMessage[] = [
   {
-    id: 1,
     messageAuthor: "agent",
     messageText: "Sure, I can assist with that!"
   },
   {
-    id: 2,
     messageAuthor: "agent",
     messageText: "Is there anything else you'd like to know?"
   },
   {
-    id: 3,
     messageAuthor: "agent",
     messageText: "I appreciate your patience!"
   },
   {
-    id: 4,
     messageAuthor: "agent",
     messageText: "Let me check that for you."
   },
   {
-    id: 5,
     messageAuthor: "agent",
     messageText: "Feel free to ask any questions!"
   },
   {
-    id: 6,
     messageAuthor: "agent",
     messageText: "I'm here to help!"
   },
   {
-    id: 7,
     messageAuthor: "agent",
     messageText: "Thank you for reaching out!"
   },
   {
-    id: 8,
     messageAuthor: "agent",
     messageText: "I'll look into it and get back to you."
   },
   {
-    id: 9,
     messageAuthor: "agent",
     messageText: "Have a great day!"
   }
 ]
 
-export const mockUserMessages: ChatMessage[] = [
+export const mockUserMessages: UserMessage[] = [
   {
-    id: 1,
     messageAuthor: "user",
     messageText: "I need assistance with my account."
   },
   {
-    id: 2,
     messageAuthor: "user",
     messageText: "Can you help me reset my password?"
   },
   {
-    id: 3,
     messageAuthor: "user",
     messageText: "I'm having trouble accessing my settings."
   },
   {
-    id: 4,
     messageAuthor: "user",
     messageText: "Is there a way to update my billing information?"
   },
   {
-    id: 5,
     messageAuthor: "user",
     messageText: "How do I change my profile picture?"
   },
   {
-    id: 6,
     messageAuthor: "user",
     messageText: "What's the process for closing my account?"
   },
   {
-    id: 7,
     messageAuthor: "user",
     messageText: "I'd like to report a bug in the app."
   },
   {
-    id: 8,
     messageAuthor: "user",
     messageText: "Where can I find the FAQ section?"
   },
   {
-    id: 9,
     messageAuthor: "user",
     messageText: "Can you explain the new feature?"
   },
   {
-    id: 10,
     messageAuthor: "user",
     messageText: "I'm experiencing a login issue."
   }
@@ -129,102 +113,122 @@ export const mockConversation: ChatMessage[] = [
   {
     id: 1,
     messageAuthor: "agent",
-    messageText: "Hi! How can I help you?"
+    messageText: "Hi! How can I help you?",
+    timestamp: 10000
   },
   {
     id: 2,
     messageAuthor: "user",
-    messageText: "I need assistance with my account."
+    messageText: "I need assistance with my account.",
+    timestamp: 10000
   },
   {
     id: 3,
     messageAuthor: "agent",
-    messageText: "Sure, I can assist with that!"
+    messageText: "Sure, I can assist with that!",
+    timestamp: 10000
   },
   {
     id: 4,
     messageAuthor: "user",
-    messageText: "Can you help me reset my password?"
+    messageText: "Can you help me reset my password?",
+    timestamp: 10000
   },
   {
     id: 5,
     messageAuthor: "agent",
-    messageText: "Is there anything else you'd like to know?"
+    messageText: "Is there anything else you'd like to know?",
+    timestamp: 10000
   },
   {
     id: 6,
     messageAuthor: "user",
-    messageText: "I'm having trouble accessing my settings."
+    messageText: "I'm having trouble accessing my settings.",
+    timestamp: 10000
   },
   {
     id: 7,
     messageAuthor: "agent",
-    messageText: "I appreciate your patience!"
+    messageText: "I appreciate your patience!",
+    timestamp: 10000
   },
   {
     id: 8,
     messageAuthor: "user",
-    messageText: "Is there a way to update my billing information?"
+    messageText: "Is there a way to update my billing information?",
+    timestamp: 10000
   },
   {
     id: 9,
     messageAuthor: "agent",
-    messageText: "Let me check that for you."
+    messageText: "Let me check that for you.",
+    timestamp: 10000
   },
   {
     id: 10,
     messageAuthor: "user",
-    messageText: "How do I change my profile picture?"
+    messageText: "How do I change my profile picture?",
+    timestamp: 10000
   },
   {
     id: 11,
     messageAuthor: "agent",
-    messageText: "Feel free to ask any questions!"
+    messageText: "Feel free to ask any questions!",
+    timestamp: 10000
   },
   {
     id: 12,
     messageAuthor: "user",
-    messageText: "What's the process for closing my account?"
+    messageText: "What's the process for closing my account?",
+    timestamp: 10000
   },
   {
     id: 13,
     messageAuthor: "agent",
-    messageText: "I'm here to help!"
+    messageText: "I'm here to help!",
+    timestamp: 10000
   },
   {
     id: 14,
     messageAuthor: "user",
-    messageText: "I'd like to report a bug in the app."
+    messageText: "I'd like to report a bug in the app.",
+    timestamp: 10000
   },
   {
     id: 15,
     messageAuthor: "agent",
-    messageText: "Thank you for reaching out!"
+    messageText: "Thank you for reaching out!",
+    timestamp: 10000
   },
   {
     id: 16,
     messageAuthor: "user",
-    messageText: "Where can I find the FAQ section?"
+    messageText: "Where can I find the FAQ section?",
+    timestamp: 10000
   },
   {
     id: 17,
     messageAuthor: "agent",
-    messageText: "I'll look into it and get back to you."
+    messageText: "I'll look into it and get back to you.",
+    timestamp: 10000
   },
   {
     id: 18,
     messageAuthor: "user",
-    messageText: "Can you explain the new feature?"
+    messageText: "Can you explain the new feature?",
+    timestamp: 10000
   },
   {
     id: 19,
     messageAuthor: "agent",
     messageText:
-      "I apologize for the delay in our response. Our team is currently experiencing high volumes, but I'm here now to assist you. How can I help?"
+      "I apologize for the delay in our response. Our team is currently experiencing high volumes, but I'm here now to assist you. How can I help?",
+    timestamp: 10000
   },
   {
     id: 20,
     messageAuthor: "user",
-    messageText: "I'm experiencing a login issue."
+    messageText: "I'm experiencing a login issue.",
+    timestamp: 10000
   }
 ]

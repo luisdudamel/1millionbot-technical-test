@@ -1,9 +1,13 @@
 <script setup lang="ts">
 const emit = defineEmits(["send-message"])
+defineProps<{
+  isButtonDisabled: boolean
+}>()
 </script>
 
 <template>
   <button
+    :disabled="isButtonDisabled"
     type="submit"
     aria-label="Send"
     @click="emit('send-message')"

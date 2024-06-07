@@ -1,14 +1,17 @@
 <script setup lang="ts">
-import type { ChatMessage } from "@/types"
+import type { UserMessage } from "@/types"
 import SendButton from "../SendButton/SendButton.vue"
-import { ref } from "vue"
+import { computed, ref } from "vue"
 const emit = defineEmits<{
-  updateList: [message: ChatMessage]
+  updateList: [message: UserMessage]
 }>()
 
 const messageText = ref("")
+const isButtonDisabled = computed(() => {
+  return messageText.value.length === 0
+})
 
-const updateMessageList = () => {
+const generateUserMessage = () => {
   emit("updateList", {
     messageText: messageText.value,
     messageAuthor: "user"
@@ -19,16 +22,17 @@ const updateMessageList = () => {
 
 <template>
   <section>
-    <form class="chat-footer__container" @submit.prevent="() => updateMessageList()">
+    <form class="chat-footer__container" @submit.prevent="() => generateUserMessage()">
       <label hidden for="message">Ask the chatbot anything</label>
       <input
+        autocomplete="off"
         id="message"
         type="text"
         class="chat-input"
         v-model.trim="messageText"
         placeholder="Ask me anything..."
       />
-      <SendButton />
+      <SendButton :isButtonDisabled="isButtonDisabled" />
     </form>
   </section>
 </template>
