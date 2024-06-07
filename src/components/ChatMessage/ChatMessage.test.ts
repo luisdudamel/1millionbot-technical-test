@@ -1,7 +1,7 @@
 import { describe, expect, test } from "vitest"
 import { render } from "@testing-library/vue"
 import ChatMessage from "./ChatMessage.vue"
-import { mockAgentMessage } from "@/mocks/mockdata"
+import { mockAgentMessage } from "@/utils/mocks/mockdata"
 
 describe("Given a ChatMessage component", () => {
   describe("When it's mounted and receives a message from an agent with the text 'Hi! How can I help you?'", () => {

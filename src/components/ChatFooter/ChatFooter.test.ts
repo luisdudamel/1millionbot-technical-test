@@ -1,7 +1,7 @@
 import { fireEvent, render } from "@testing-library/vue"
 import { describe, expect, test } from "vitest"
 import ChatFooter from "./ChatFooter.vue"
-import type { ChatMessage } from "@/types"
+import type { ChatMessage, UserMessage } from "@/types"
 
 describe("Given a ChatFooter component", () => {
   describe("When it's mounted", () => {
@@ -22,7 +22,7 @@ describe("Given a ChatFooter component", () => {
         const expectedAriaLabel = "Send"
 
         const userMessage = "Hi, I would like some help"
-        const expectedMessage: ChatMessage = {
+        const expectedMessage: UserMessage = {
           messageText: "Hi, I would like some help",
           messageAuthor: "user"
         }

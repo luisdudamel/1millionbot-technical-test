@@ -1,7 +1,7 @@
 import { render } from "@testing-library/vue"
 import { describe, expect, test } from "vitest"
 import ChatMessageList from "./ChatMessageList.vue"
-import { mockConversation } from "@/mocks/mockdata"
+import { mockConversation } from "@/utils/mocks/mockdata"
 
 describe("Given a ChatMessageList component", () => {
   describe("When it's mounted with a list of two messages", () => {

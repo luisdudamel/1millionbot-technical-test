@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest"
 import { render, fireEvent } from "@testing-library/vue"
-import { mockAgent } from "@/mocks/mockdata"
+import { mockAgent } from "@/utils/mocks/mockdata"
 import ChatHeader from "./ChatHeader.vue"
 
 describe("Given a ChateHeader component", () => {
