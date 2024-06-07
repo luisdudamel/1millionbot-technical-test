@@ -8,6 +8,7 @@ export type User = {
 }
 
 export type ChatMessage = {
+  id?: number
   messageText: string
   messageAuthor: "agent" | "user"
 }

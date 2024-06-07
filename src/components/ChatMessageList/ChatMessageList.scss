@@ -1,0 +1,20 @@
+.chat {
+  &-container {
+    padding: 0px 20px;
+    overflow: scroll;
+    height: 100%;
+  }
+  &-message {
+    &-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      gap: 10px;
+    }
+
+    &--user {
+      align-self: self-end;
+    }
+  }
+}

@@ -3,7 +3,12 @@ const emit = defineEmits(["send-message"])
 </script>
 
 <template>
-  <button aria-label="Send" @click="emit('send-message')" class="send-button__container">
+  <button
+    type="submit"
+    aria-label="Send"
+    @click="emit('send-message')"
+    class="send-button__container"
+  >
     <i class="fa-solid fa-paper-plane" />
   </button>
 </template>

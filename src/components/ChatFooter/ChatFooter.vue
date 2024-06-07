@@ -1,14 +1,35 @@
 <script setup lang="ts">
+import type { ChatMessage } from "@/types"
 import SendButton from "../SendButton/SendButton.vue"
 import { ref } from "vue"
+const emit = defineEmits<{
+  updateList: [message: ChatMessage]
+}>()
 
-const text = ref("")
+const messageText = ref("")
+
+const updateMessageList = () => {
+  emit("updateList", {
+    messageText: messageText.value,
+    messageAuthor: "user"
+  })
+  messageText.value = ""
+}
 </script>
 
 <template>
-  <section class="chat-footer__container">
-    <input class="chat-input" v-model.trim="text" placeholder="Ask me anything..." />
-    <SendButton />
+  <section>
+    <form class="chat-footer__container" @submit.prevent="() => updateMessageList()">
+      <label hidden for="message">Ask the chatbot anything</label>
+      <input
+        id="message"
+        type="text"
+        class="chat-input"
+        v-model.trim="messageText"
+        placeholder="Ask me anything..."
+      />
+      <SendButton />
+    </form>
   </section>
 </template>
 

@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import type { ChatMessage } from "../../types"
-interface ChatMessageProps extends ChatMessage {}
 
-defineProps<ChatMessageProps>()
+defineProps<ChatMessage>()
 </script>
 
 <template>
