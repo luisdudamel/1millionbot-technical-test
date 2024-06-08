@@ -15,4 +15,5 @@ export type UserMessage = {
 export type ChatMessage = UserMessage & {
   id: number
   timestamp: number
+  actionMessage?: boolean
 }

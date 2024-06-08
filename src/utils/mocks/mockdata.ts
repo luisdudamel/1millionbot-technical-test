@@ -5,6 +5,45 @@ export const mockAgent: ChatAgent = {
   avatarUrl: "chatbotavatar.png"
 }
 
+export const mockAgentGreeting: ChatMessage[] = [
+  {
+    id: 0,
+    timestamp: Date.now(),
+    messageAuthor: "agent",
+    messageText: "Hi! I'm Leia. How can I help you today?"
+  },
+  {
+    id: 1,
+    timestamp: Date.now(),
+    messageAuthor: "agent",
+    messageText: "Dont know how to start? Here are some things you can ask me: "
+  }
+]
+
+export const mockActionMessages: ChatMessage[] = [
+  {
+    id: 2,
+    timestamp: Date.now(),
+    messageAuthor: "agent",
+    messageText: "What can you do for me?",
+    actionMessage: true
+  },
+  {
+    id: 3,
+    timestamp: Date.now(),
+    messageAuthor: "agent",
+    messageText: "How is the weather today?",
+    actionMessage: true
+  },
+  {
+    id: 4,
+    timestamp: Date.now(),
+    messageAuthor: "agent",
+    messageText: "Where can I find the bank's policies on refunds?",
+    actionMessage: true
+  }
+]
+
 export const mockAgentMessage: ChatMessage = {
   id: 1,
   messageAuthor: "agent",

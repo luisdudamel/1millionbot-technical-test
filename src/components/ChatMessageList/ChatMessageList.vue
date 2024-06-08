@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ChatMessage from "../ChatMessage/ChatMessage.vue"
+import ActionMessage from "../ActionMessage/ActionMessage.vue"
 import type { ChatMessage as ChatMessageType } from "../../types"
 
 defineProps<{ messageList: ChatMessageType[] }>()
@@ -15,10 +16,11 @@ defineProps<{ messageList: ChatMessageType[] }>()
           }
         "
         v-for="message in messageList"
-        :class="`chat-message--${message.messageAuthor === 'user' ? 'user' : 'agent'}`"
+        :class="`chat-message--${message.messageAuthor === 'user' ? 'user' : 'agent'} ${message.actionMessage ? 'action-message' : ''}`"
         :key="message.id"
       >
-        <ChatMessage v-bind="message" />
+        <ActionMessage v-if="message.actionMessage" v-bind="message" />
+        <ChatMessage v-else v-bind="message" />
       </li>
     </ul>
   </section>
