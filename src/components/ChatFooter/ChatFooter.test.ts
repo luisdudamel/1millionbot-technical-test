@@ -34,7 +34,7 @@ describe("Given a ChatFooter component", () => {
         await fireEvent.update(inputElement, userMessage)
         await fireEvent.click(sendButton)
 
-        expect(emitted<ChatMessage[][]>("updateList")[0][0]).toMatchObject(expectedMessage)
+        expect(emitted<ChatMessage[][]>("update-list")[0][0]).toMatchObject(expectedMessage)
       })
     })
   })

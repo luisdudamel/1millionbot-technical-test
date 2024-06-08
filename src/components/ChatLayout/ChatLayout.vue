@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { mockAgent } from "../../utils/mocks/mockdata"
+import { mockActionMessages, mockAgent, mockAgentGreeting } from "../../utils/mocks/mockdata"
 import ChatFooter from "../ChatFooter/ChatFooter.vue"
 import ChatHeader from "../ChatHeader/ChatHeader.vue"
 import ChatMessageList from "../ChatMessageList/ChatMessageList.vue"
@@ -7,10 +7,12 @@ import { ref } from "vue"
 import type { ChatMessage, UserMessage } from "@/types"
 import { addMessageToList, generateAgentResponse } from "../../utils/functions"
 
-const messageList = ref<ChatMessage[]>([])
+const messageList = ref<ChatMessage[]>(mockAgentGreeting)
+
 const isAgentTyping = ref(false)
 let agentResponseTimer: NodeJS.Timeout | null = null
 let agentTypingTimer: NodeJS.Timeout | null = null
+mockActionMessages.forEach((actionMessage) => messageList.value.push(actionMessage))
 
 const handleConversation = (incomingMessage: UserMessage) => {
   if (agentResponseTimer && agentTypingTimer) {
@@ -35,10 +37,18 @@ const handleConversation = (incomingMessage: UserMessage) => {
 <template>
   <aside class="chat-layout__container">
     <ChatHeader v-bind="mockAgent" />
-    <ChatMessageList :messageList="messageList" />
-    <div v-if="isAgentTyping" class="is-typing-container">{{ mockAgent.name }} is typing..</div>
+    <ChatMessageList
+      :messageList="messageList"
+      @update-list="
+        (message) => {
+          handleConversation(message)
+        }
+      "
+      :agent-name="mockAgent.name"
+      :is-agent-typing="isAgentTyping"
+    />
     <ChatFooter
-      @updateList="
+      @update-list="
         (message) => {
           handleConversation(message)
         }

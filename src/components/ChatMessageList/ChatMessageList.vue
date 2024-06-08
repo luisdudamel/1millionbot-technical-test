@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import ChatMessage from "../ChatMessage/ChatMessage.vue"
-import type { ChatMessage as ChatMessageType } from "../../types"
+import ActionMessage from "../ActionMessage/ActionMessage.vue"
+import type { ChatMessage as ChatMessageType, UserMessage } from "../../types"
 
-defineProps<{ messageList: ChatMessageType[] }>()
+defineProps<{ messageList: ChatMessageType[]; isAgentTyping: boolean; agentName: string }>()
+defineEmits<{
+  "update-list": [UserMessage]
+}>()
 </script>
 
 <template>
@@ -15,12 +19,32 @@ defineProps<{ messageList: ChatMessageType[] }>()
           }
         "
         v-for="message in messageList"
-        :class="`chat-message--${message.messageAuthor === 'user' ? 'user' : 'agent'}`"
+        :class="`chat-message--${message.messageAuthor === 'user' ? 'user' : 'agent'} ${message.actionMessage ? 'action-message' : ''}`"
         :key="message.id"
       >
-        <ChatMessage v-bind="message" />
+        <ActionMessage
+          v-if="message.actionMessage"
+          v-bind="message"
+          @click="
+            $emit('update-list', {
+              messageAuthor: 'user',
+              messageText: message.messageText
+            })
+          "
+        />
+        <ChatMessage v-else v-bind="message" />
       </li>
     </ul>
+    <div
+      :ref="
+        (element) => {
+          ;(element as HTMLElement).scrollIntoView()
+        }
+      "
+      class="is-typing-container"
+    >
+      {{ isAgentTyping ? agentName + " is typing..." : "" }}
+    </div>
   </section>
 </template>
 

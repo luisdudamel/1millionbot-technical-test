@@ -1,0 +1,28 @@
+@use "src/styles/base";
+
+.action-message {
+  margin: 0px;
+  cursor: pointer;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 250px;
+    height: fit-content;
+    min-height: 50px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: white;
+    border: solid 1px base.$color-primary;
+    font-style: italic;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  &__icon {
+    padding: 0px 15px;
+    margin-right: 5px;
+    font-size: 1.5rem;
+  }
+}
