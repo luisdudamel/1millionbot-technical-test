@@ -3,7 +3,5 @@ import GeneralLayout from "@/components/GeneralLayout/GeneralLayout.vue"
 </script>
 
 <template>
-  <main>
-    <GeneralLayout />
-  </main>
+  <GeneralLayout />
 </template>
