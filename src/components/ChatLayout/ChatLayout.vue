@@ -8,6 +8,7 @@ import type { ChatMessage, UserMessage } from "@/types"
 import { addMessageToList, generateAgentResponse } from "../../utils/functions"
 
 const messageList = ref<ChatMessage[]>(mockAgentGreeting)
+
 const isAgentTyping = ref(false)
 let agentResponseTimer: NodeJS.Timeout | null = null
 let agentTypingTimer: NodeJS.Timeout | null = null
@@ -36,10 +37,18 @@ const handleConversation = (incomingMessage: UserMessage) => {
 <template>
   <aside class="chat-layout__container">
     <ChatHeader v-bind="mockAgent" />
-    <ChatMessageList :messageList="messageList" />
-    <div v-if="isAgentTyping" class="is-typing-container">{{ mockAgent.name }} is typing..</div>
+    <ChatMessageList
+      :messageList="messageList"
+      @update-list="
+        (message) => {
+          handleConversation(message)
+        }
+      "
+      :agent-name="mockAgent.name"
+      :is-agent-typing="isAgentTyping"
+    />
     <ChatFooter
-      @updateList="
+      @update-list="
         (message) => {
           handleConversation(message)
         }

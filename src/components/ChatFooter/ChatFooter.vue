@@ -3,7 +3,7 @@ import type { UserMessage } from "@/types"
 import SendButton from "../SendButton/SendButton.vue"
 import { computed, ref } from "vue"
 const emit = defineEmits<{
-  updateList: [message: UserMessage]
+  "update-list": [message: UserMessage]
 }>()
 
 const messageText = ref("")
@@ -12,7 +12,7 @@ const isButtonDisabled = computed(() => {
 })
 
 const generateUserMessage = () => {
-  emit("updateList", {
+  emit("update-list", {
     messageText: messageText.value,
     messageAuthor: "user"
   })
