@@ -5,14 +5,14 @@ defineProps<ChatMessage>()
 </script>
 
 <template>
-  <div class="action-message__container">
+  <button class="action-message__container">
     <div class="action-message__icon">
       <i class="fa-solid fa-question"></i>
     </div>
     <p class="action-message">
       {{ messageText }}
     </p>
-  </div>
+  </button>
 </template>
 
 <style lang="scss">
