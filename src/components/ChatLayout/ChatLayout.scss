@@ -1,3 +1,5 @@
+@use "src/styles/base";
+
 .chat-layout {
   &__container {
     display: flex;
@@ -5,5 +7,12 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
+
+    .is-typing-container {
+      color: base.$faded-text;
+      font-size: 0.8rem;
+      padding-left: 5px;
+      padding-bottom: 2px;
+    }
   }
 }

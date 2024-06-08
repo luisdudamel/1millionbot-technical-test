@@ -9,6 +9,11 @@ defineProps<{ messageList: ChatMessageType[] }>()
   <section class="chat-container">
     <ul class="chat-message-list">
       <li
+        :ref="
+          (element) => {
+            ;(element as HTMLElement).scrollIntoView()
+          }
+        "
         v-for="message in messageList"
         :class="`chat-message--${message.messageAuthor === 'user' ? 'user' : 'agent'}`"
         :key="message.id"
