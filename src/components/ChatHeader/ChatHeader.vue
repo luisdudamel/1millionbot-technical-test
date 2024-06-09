@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { ChatAgent } from "@/types"
+import ContextualMenu from "../ContextualMenu/ContextualMenu.vue"
 defineEmits(["minimize-chat", "open-options"])
 defineProps<ChatAgent>()
 </script>
@@ -31,6 +32,7 @@ defineProps<ChatAgent>()
         <img src="/img/threedots.png" alt="Three dots icon" />
       </button>
     </div>
+    <ContextualMenu />
   </section>
 </template>
 
