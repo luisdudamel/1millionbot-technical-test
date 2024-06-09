@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { ChatMessage } from "../../types"
-import Carousel from "primevue/carousel"
-
+import ImageMessage from "../ImageMesage/ImageMessage.vue"
 defineProps<ChatMessage>()
 </script>
 
@@ -9,12 +8,12 @@ defineProps<ChatMessage>()
   <div
     v-if="imageMessage"
     class="chat-message__container"
-    :class="'chat-message__container--' + messageAuthor"
+    :class="'chat-message__container--' + messageAuthor + ` ${imageMessage ? 'image-message' : ''}`"
   >
     <p class="chat-message__text">
       {{ messageText }}
     </p>
-    <Carousel />
+    <ImageMessage />
   </div>
 
   <div v-else class="chat-message__container" :class="'chat-message__container--' + messageAuthor">

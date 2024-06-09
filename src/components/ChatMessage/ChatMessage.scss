@@ -22,6 +22,12 @@
       background-color: base.$color-primary;
       border-bottom-left-radius: 0;
     }
+
+    &--agent,
+    .image-message {
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 
   &__text {
