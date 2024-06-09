@@ -2,6 +2,7 @@ import { describe, expect, test } from "vitest"
 import { render, fireEvent } from "@testing-library/vue"
 import { mockAgent } from "@/utils/mocks/mockdata"
 import ChatHeader from "./ChatHeader.vue"
+import { contextualMenuOptions } from "@/utils/data"
 
 describe("Given a ChateHeader component", () => {
   describe("When it's mounted and receives an agent named Leia", () => {
@@ -44,17 +45,17 @@ describe("Given a ChateHeader component", () => {
   })
 
   describe("When it's mounted and the user clicks on the button with the accesible name `Open chat options`", () => {
-    test("Then it should emit the 'open-options' event", async () => {
+    test("Then it should show a contextual menu with options", async () => {
       const expectedAriaLabel = "Open chat options"
-      const expectedEvent = "open-options"
+      const expectedOptions = contextualMenuOptions
 
-      const { getByRole, emitted } = render(ChatHeader)
+      const { getByRole, findAllByRole } = render(ChatHeader)
       const sendButton = getByRole("button", { name: expectedAriaLabel })
 
       await fireEvent.click(sendButton)
+      const optionsList = await findAllByRole("listitem")
 
-      expect(emitted()).toHaveProperty("click")
-      expect(emitted()).toHaveProperty([expectedEvent])
+      expect(optionsList).toHaveLength(expectedOptions.length)
     })
   })
 })

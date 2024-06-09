@@ -1,4 +1,4 @@
-import { fireEvent, getByRole, render } from "@testing-library/vue"
+import { fireEvent, render } from "@testing-library/vue"
 import { describe, expect, test } from "vitest"
 import ContextualMenu from "./ContextualMenu.vue"
 import { contextualMenuOptions } from "@/utils/data"
