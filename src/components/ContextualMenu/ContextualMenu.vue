@@ -12,7 +12,9 @@ defineEmits(contextualMenuOptions.map((option) => option.actionToEmit))
       :key="option.id"
       @click="$emit(option.actionToEmit)"
     >
-      {{ option.optionText }}
+      <button class="contextual-menu__button">
+        {{ option.optionText }}
+      </button>
     </li>
   </ul>
 </template>

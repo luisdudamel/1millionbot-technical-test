@@ -8,7 +8,7 @@ export const contextualMenuOptions: ContextualOptions[] = [
   },
   {
     id: 2,
-    optionText: "Change Language",
+    optionText: "Change language",
     actionToEmit: "change-language"
   },
   {
