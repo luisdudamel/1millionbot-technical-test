@@ -16,6 +16,7 @@ export type ChatMessage = UserMessage & {
   id: number
   timestamp: number
   actionMessage?: boolean
+  imageMessage?: boolean
 }
 
 export type ContextualOptions = {

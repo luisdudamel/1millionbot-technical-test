@@ -41,6 +41,13 @@ export const mockActionMessages: ChatMessage[] = [
     messageAuthor: "agent",
     messageText: "Where can I find the bank's policies on refunds?",
     actionMessage: true
+  },
+  {
+    id: 5,
+    timestamp: Date.now(),
+    messageAuthor: "agent",
+    messageText: "Show me the christmas party photos🎄",
+    actionMessage: true
   }
 ]
 
@@ -104,6 +111,11 @@ export const mockAgentMessages: UserMessage[] = [
     messageText: "Have a great day!"
   }
 ]
+
+export const mockAgentImageResponse: UserMessage = {
+  messageAuthor: "agent",
+  messageText: "Sure! Here are the last christmas party photos!"
+}
 
 export const mockUserMessages: UserMessage[] = [
   {
