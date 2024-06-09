@@ -4,5 +4,68 @@
     max-height: 100vh;
     height: 100vh;
     max-width: 100vw;
+
+    @keyframes hide-chat {
+      from {
+        display: block;
+      }
+      to {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+    }
+
+    .chat-hidden {
+      animation: hide-chat 200ms;
+      display: none;
+    }
+
+    .chat-agent-bubble {
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      position: absolute;
+      bottom: 10px;
+      right: 25px;
+
+      &__avatar {
+        border-radius: 50px;
+        box-shadow:
+          rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      }
+
+      &__dialog {
+        position: absolute;
+        bottom: 40px;
+        right: 140px;
+        display: flex;
+        align-items: center;
+        height: 60px;
+        padding: 0px 20px;
+        background-color: white;
+        border-radius: 15px;
+        border-bottom-right-radius: 0;
+        font-size: 1.5rem;
+        box-shadow:
+          rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      }
+    }
+
+    @keyframes hide-bubble {
+      from {
+        display: block;
+      }
+      to {
+        transform: translateY(-40px);
+        opacity: 0;
+      }
+    }
+
+    .bubble-hidden {
+      animation: hide-bubble 200ms;
+      display: none;
+    }
   }
 }
