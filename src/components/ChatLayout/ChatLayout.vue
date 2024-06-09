@@ -5,7 +5,7 @@ import ChatHeader from "../ChatHeader/ChatHeader.vue"
 import ChatMessageList from "../ChatMessageList/ChatMessageList.vue"
 import { ref } from "vue"
 import type { ChatMessage, UserMessage } from "@/types"
-import { addMessageToList, generateAgentResponse } from "../../utils/functions"
+import { addMessageToList } from "../../utils/functions"
 
 const messageList = ref<ChatMessage[]>(mockAgentGreeting)
 
@@ -22,12 +22,15 @@ const handleConversation = (incomingMessage: UserMessage) => {
 
   const timestamp = Date.now()
 
-  addMessageToList(incomingMessage, timestamp, messageList)
+  addMessageToList(timestamp, messageList, incomingMessage.messageAuthor, incomingMessage)
+
   agentTypingTimer = setTimeout(() => {
     isAgentTyping.value = true
   }, 500)
+
   agentResponseTimer = setTimeout(() => {
-    generateAgentResponse(messageList)
+    addMessageToList(timestamp, messageList, "agent", incomingMessage)
+
     agentResponseTimer = null
     isAgentTyping.value = false
   }, 1500)

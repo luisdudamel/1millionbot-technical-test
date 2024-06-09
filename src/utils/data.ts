@@ -17,3 +17,21 @@ export const contextualMenuOptions: ContextualOptions[] = [
     actionToEmit: "check-privacy-policy"
   }
 ]
+
+export const imageList = [
+  {
+    id: 1,
+    imageUrl: "party1.jpg",
+    alternativeText: "Several people on an office enjoying a christmas party"
+  },
+  {
+    id: 2,
+    imageUrl: "party2.jpg",
+    alternativeText: "Several people on an office enjoying a christmas party"
+  },
+  {
+    id: 3,
+    imageUrl: "party3.jpg",
+    alternativeText: "Several people on an office enjoying a christmas party"
+  }
+]
