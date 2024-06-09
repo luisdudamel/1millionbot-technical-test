@@ -1,6 +1,8 @@
 @use "src/styles/base";
 
 .chat-message {
+  width: fit-content;
+
   &__container {
     display: flex;
     align-items: center;
@@ -23,11 +25,12 @@
       border-bottom-left-radius: 0;
     }
 
-    &--agent,
-    .image-message {
+    &--agent.image-message {
       flex-direction: column;
       gap: 20px;
-      width: 100%;
+      max-width: none;
+      width: 50%;
+      min-width: fit-content;
     }
   }
 

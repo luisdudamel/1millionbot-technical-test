@@ -7,8 +7,8 @@ import { ref } from "vue"
 import type { ChatMessage, UserMessage } from "@/types"
 import { addMessageToList } from "../../utils/functions"
 
+defineEmits(["minimize-chat"])
 const messageList = ref<ChatMessage[]>(mockAgentGreeting)
-
 const isAgentTyping = ref(false)
 let agentResponseTimer: NodeJS.Timeout | null = null
 let agentTypingTimer: NodeJS.Timeout | null = null
@@ -38,8 +38,8 @@ const handleConversation = (incomingMessage: UserMessage) => {
 </script>
 
 <template>
-  <aside class="chat-layout__container">
-    <ChatHeader v-bind="mockAgent" />
+  <aside :class="'chat-layout__container'">
+    <ChatHeader @minimize-chat="$emit('minimize-chat')" v-bind="mockAgent" />
     <ChatMessageList
       :messageList="messageList"
       @update-list="
