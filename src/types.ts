@@ -17,3 +17,9 @@ export type ChatMessage = UserMessage & {
   timestamp: number
   actionMessage?: boolean
 }
+
+export type ContextualOptions = {
+  id: number
+  optionText: string
+  actionToEmit: string
+}
