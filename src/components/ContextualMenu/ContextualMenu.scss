@@ -2,7 +2,7 @@
 
 .contextual-menu {
   &__container {
-    position: fixed;
+    position: absolute;
     background-color: base.$color-primary;
     border-radius: 15px;
     border-top-right-radius: 0px;
@@ -15,6 +15,7 @@
     margin: 0px;
     flex-direction: column;
     justify-content: space-evenly;
+    z-index: 1;
   }
 
   &__option {

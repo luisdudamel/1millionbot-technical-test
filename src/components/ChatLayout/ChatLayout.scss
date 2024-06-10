@@ -8,6 +8,7 @@
     height: 100%;
     width: 100%;
     overflow: hidden;
+    background-color: white;
 
     .is-typing-container {
       color: base.$faded-text;
@@ -22,6 +23,18 @@
         visibility: hidden;
         height: 20px;
       }
+    }
+    @media only screen and (min-width: 500px) {
+      position: fixed;
+      bottom: 5px;
+      right: 5px;
+      width: 500px;
+      max-height: 700px;
+      box-shadow:
+        rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+      border-radius: 10px;
     }
   }
 }
