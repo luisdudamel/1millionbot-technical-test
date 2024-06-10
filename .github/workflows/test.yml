@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Git checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install modules
         run: npm ci
@@ -17,5 +17,14 @@ jobs:
       - name: Unit / Component testing
         run: npm run test:unit
 
-      - name: End to end testing
-        run: npm run test:e2e
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v4
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          build: npm run build
+          start: npm start
