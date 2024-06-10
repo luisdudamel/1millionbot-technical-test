@@ -14,5 +14,8 @@ jobs:
       - name: Install modules
         run: npm ci
 
-      - name: Testing
+      - name: Unit / Component testing
         run: npm run test:unit
+
+      - name: End to end testing
+        run: npm run test:e2e
