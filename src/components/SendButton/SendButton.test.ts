@@ -7,7 +7,11 @@ describe("Given a SendButton component", () => {
 
   describe("When it's mounted", () => {
     test("Then it should render a button with the accesible name `Send`", () => {
-      const { getByRole } = render(SendButton)
+      const { getByRole } = render(SendButton, {
+        props: {
+          isButtonDisabled: true
+        }
+      })
       const sendButton = getByRole("button", { name: expectedAriaLabel })
       expect(sendButton).not.toBeNull()
     })
@@ -17,7 +21,11 @@ describe("Given a SendButton component", () => {
     test("Then it should emit the 'send-message' event", async () => {
       const expectedEvent = "send-message"
 
-      const { getByRole, emitted } = render(SendButton)
+      const { getByRole, emitted } = render(SendButton, {
+        props: {
+          isButtonDisabled: true
+        }
+      })
       const sendButton = getByRole("button", { name: expectedAriaLabel })
 
       await fireEvent.click(sendButton)

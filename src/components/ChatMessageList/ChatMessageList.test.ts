@@ -8,7 +8,9 @@ describe("Given a ChatMessageList component", () => {
     test("Then it should render two list elements", () => {
       const wrapper = mount(ChatMessageList, {
         props: {
-          messageList: [mockConversation[0], mockConversation[1]]
+          messageList: [mockConversation[0], mockConversation[1]],
+          isAgentTyping: false,
+          agentName: "Leia"
         }
       })
 
