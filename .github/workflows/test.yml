@@ -4,7 +4,7 @@ on: push
 
 jobs:
   test:
-    name: Test passes
+    name: Unit / Component tests
     runs-on: ubuntu-latest
 
     steps:
@@ -19,6 +19,7 @@ jobs:
 
   cypress-run:
     runs-on: ubuntu-latest
+    name: Cypress E2E tests
     steps:
       - name: Git checkout
         uses: actions/checkout@v4

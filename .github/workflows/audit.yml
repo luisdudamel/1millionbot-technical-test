@@ -1,11 +1,11 @@
-name: Audit
+name: Linting / styles on push
 
 on: push
 
 jobs:
-  audit:
+  lint:
     runs-on: ubuntu-latest
-    name: Audit
+    name: Linter
 
     steps:
       - name: Git checkout
