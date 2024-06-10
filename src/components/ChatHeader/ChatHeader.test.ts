@@ -34,7 +34,9 @@ describe("Given a ChateHeader component", () => {
       const expectedAriaLabel = "Minimize chat"
       const expectedEvent = "minimize-chat"
 
-      const { getByRole, emitted } = render(ChatHeader)
+      const { getByRole, emitted } = render(ChatHeader, {
+        props: mockAgent
+      })
       const sendButton = getByRole("button", { name: expectedAriaLabel })
 
       await fireEvent.click(sendButton)
@@ -49,7 +51,9 @@ describe("Given a ChateHeader component", () => {
       const expectedAriaLabel = "Open chat options"
       const expectedOptions = contextualMenuOptions
 
-      const { getByRole, findAllByRole } = render(ChatHeader)
+      const { getByRole, findAllByRole } = render(ChatHeader, {
+        props: mockAgent
+      })
       const sendButton = getByRole("button", { name: expectedAriaLabel })
 
       await fireEvent.click(sendButton)
