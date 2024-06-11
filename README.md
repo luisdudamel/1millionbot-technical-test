@@ -76,7 +76,7 @@ It allows users to interact with a friendly virtual assistant. The chatbot featu
 <img src="https://s12.gifyu.com/images/SY0sN.gif" />
 <br/>
 
-<img src="https://s10.gifyu.com/images/SY0sT.gif" />
+<img src="https://s10.gifyu.com/images/SY0tL.gif" />
 </div>
 
 ---
