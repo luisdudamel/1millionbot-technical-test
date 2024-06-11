@@ -63,6 +63,7 @@ It allows users to interact with a friendly virtual assistant. The chatbot featu
    -  The app is deployed on Netlify, using CI/CD and github actions for every PR.
    -  Leia's codebase adheres to clean coding practices using custom ESLint rules.
    -  <b>Figma custom made design [here](https://www.figma.com/design/IpSVllxJRI6xYIJswyaj8W/Main-Design?node-id=0-1&t=NY542NNwx4Si1wZL-1)</b>
+   -  <b>Docker hub image [here](https://hub.docker.com/r/luisdudamel/1millionbot-tech-test)</b>
 
 <div align="center">
 
